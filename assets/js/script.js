@@ -1,3 +1,4 @@
+// Sample question //
 const quizData = [
         {
             question: "Who won the 2023 Challenge Cup Final?",
@@ -8,7 +9,7 @@ const quizData = [
             correct: "c",
         },
 ];
-
+// Progress questions from typed to API with random question bank //
 const quiz = document.getElementById("quiz");
 const answerElements = document.querySelectorAll(".answer");
 const questionElement = document.getElementById("question");
@@ -31,7 +32,7 @@ const getSelected = () => {
     });
     return answer;
 };
-
+// Quiz to react to user clicks for +1 score/game over upon incorrect //
 const loadQuiz = () => {
     deselectAnswers();
     const currentQuizData = quizData[currentQuiz];
@@ -58,3 +59,4 @@ submitButton.addEventListener("click", () => {
         }
     }
 });
+
