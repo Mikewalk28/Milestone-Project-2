@@ -43,3 +43,9 @@ body {
     width: 100%;
 
 }
+
+/* Hidden frames */
+
+.hide {
+    display: none;
+}
