@@ -83,3 +83,11 @@ for (var i = 0; i < answerButtonList.length; i++) {
     });
 }
 
+// Instructions link //
+let instructions = document.getElementById("how-to-area");
+let instructionsBtn = document.getElementById('how-to-btn');
+how-to-play.addEventListener('click', function () {
+    instructions.classList.remove('hide');
+    welcomeSection.classList.add('hide');
+});
+
