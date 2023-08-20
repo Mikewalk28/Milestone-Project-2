@@ -82,12 +82,20 @@ for (var i = 0; i < answerButtonList.length; i++) {
         }
     });
 }
+// Welcome area link //
+let welcomeSection = document.getElementById('welcome-section');
 
 // Instructions link //
-let instructions = document.getElementById("how-to-area");
-let instructionsBtn = document.getElementById('how-to-btn');
-how-to-play.addEventListener('click', function () {
-    instructions.classList.remove('hide');
-    welcomeSection.classList.add('hide');
-});
+let howTo = document.getElementById("how-to-area");
+    let HowToBtn = document.getElementById('how-to-btn');
+    HowToBtn.addEventListener('click', function() {
+        howTo.classList.remove('hide');
+        welcomeSection.classList.add('hide');
+    });
 
+// Play game link //
+let quizArea = document.getElementById('qui-area');
+    let startBtn = document.getElementById('start-btn');
+    startBtn.addEventListener('click', function() { 
+        welcomeSection.classList.add('hide');
+    });
