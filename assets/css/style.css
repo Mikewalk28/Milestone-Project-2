@@ -20,10 +20,23 @@
 /* Page Styling */
 
 body {
-    background: url(assets/images/main-image/7227782.jpg) no-repeat center center;
+    background: url(../images/main-image/7227163.jpg) no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+/* Title Styling */
+
+.title {
+    color: white;
+}
+
+/* Question styling */
+
+#question {
+    color: white;
+    
 }
