@@ -99,7 +99,7 @@ let quizArea = document.getElementById('quiz-area');
     startBtn.addEventListener('click', function() { 
         quizArea.classList.remove('hide');
         welcomeSection.classList.add('hide');
-    });
+    }); 
 
 // Quiz timer // 
 var counter = 15;             
