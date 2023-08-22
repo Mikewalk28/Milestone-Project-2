@@ -49,3 +49,11 @@ body {
 .hide {
     display: none;
 }
+
+/* How to area styling */
+
+#how-to-area {
+    background-color: white;
+    text-align: center;
+
+}
