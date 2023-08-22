@@ -68,14 +68,14 @@ for (var i = 0; i < answerButtonList.length; i++) {
                 }
                 else {
                     quiz.innerHTML = `
-                    <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+                    <h2>You answered ${score} questions correctly</h2>
                     <button onclick="history.go(0)">Play Again</button>
                 `;
                 }
             }
             else {
                 quiz.innerHTML = `
-                    <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+                    <h2>You answered ${score} questions correctly</h2>
                     <button onclick="history.go(0)">Play Again</button>
                 `;
             }
@@ -94,8 +94,47 @@ let howTo = document.getElementById("how-to-area");
     });
 
 // Play game link //
-let quizArea = document.getElementById('qui-area');
+let quizArea = document.getElementById('quiz-area');
     let startBtn = document.getElementById('start-btn');
     startBtn.addEventListener('click', function() { 
+        quizArea.classList.remove('hide');
         welcomeSection.classList.add('hide');
     });
+
+// Quiz timer // 
+var counter = 15;             
+var questionsCount = 0;       
+
+//Questions array
+var questions = [
+    "Question 1", "Question 2", "Question 3"
+];
+
+questionDivId = document.getElementById('question');
+
+setInterval(function () {
+    counter--;
+
+    if (counter >= 0) {
+        id = document.getElementById('count');
+        id.innerHTML = counter;
+    }
+    if (counter === 0) {
+        id.innerHTML = 'Times Up!';
+        counter = 15;
+        questionsCount++;
+    }
+
+    //To check if all questions are completed or not
+    if (questionsCount === questions.length) {
+        questionDivId.innerHTML = "Congratulations! You beat the Endless Quiz!";
+        id.innerHTML = "";
+    } else {
+        questionDivId.innerHTML = questions[questionsCount];
+    }
+}, 1000);
+
+function goToNextQuestion() {
+    questionsCount++;
+    counter = 15;
+}
