@@ -1,5 +1,5 @@
 // Sample question //
-const quizData = [
+const questionList = [
     {
         question: "Who won the 2023 Challenge Cup Final?",
         a: "St. Helens",
@@ -34,107 +34,168 @@ const answerButtonB = document.getElementById("b");
 const answerButtonC = document.getElementById("c");
 const answerButtonD = document.getElementById("d");
 
+let currentQuestionIndex = 0;
+
 let currentQuiz = 0;
 let score = 0;
+let timer = null;
+let counter = 15;
 
-const deselectAnswers = () => {
-    answerElements.forEach((answer) => (answer.checked = false));
-};
 
-// Quiz to react to user clicks for +1 score/game over upon incorrect //
-const loadQuiz = () => {
-    deselectAnswers();
-    const currentQuizData = quizData[currentQuiz];
-    questionElement.innerText = currentQuizData.question;
-    answerButtonA.innerText = currentQuizData.a;
-    answerButtonB.innerText = currentQuizData.b;
-    answerButtonC.innerText = currentQuizData.c;
-    answerButtonD.innerText = currentQuizData.d;
-};
+function displayQuiz() {
+    document.getElementById('quiz-area').classList.remove('hide');
+}
 
-loadQuiz();
 
-const answerButtonList = document.getElementsByClassName('answer');
-for (var i = 0; i < answerButtonList.length; i++) {
-    answerButtonList[i].addEventListener("click", (event) => {
-        const answer = event.target.id;
-        if (answer) {
-            if (answer === quizData[currentQuiz].correct) {
-                score++;
+function getQuestion() {
+    const currentQuestion = questionList[currentQuestionIndex];
+    currentQuestionIndex = currentQuestionIndex + 1;
+    return currentQuestion;
+}
 
-                currentQuiz++;
-                if (currentQuiz < quizData.length) {
-                    loadQuiz();
-                }
-                else {
-                    quiz.innerHTML = `
-                    <h2>You answered ${score} questions correctly</h2>
-                    <button onclick="history.go(0)">Play Again</button>
-                `;
-                }
-            }
-            else {
-                quiz.innerHTML = `
-                    <h2>You answered ${score} questions correctly</h2>
-                    <button onclick="history.go(0)">Play Again</button>
-                `;
-            }
+
+function displayQuestion(questionData) {
+    questionElement.innerText = questionData.question;
+    answerButtonA.innerText = questionData.a;
+    answerButtonB.innerText = questionData.b;
+    answerButtonC.innerText = questionData.c;
+    answerButtonD.innerText = questionData.d;
+}
+
+function gameOver() {
+    alert('Time is Up');
+    clearInterval(timer);
+}
+
+function startTimer() {
+    timer = setInterval(function () {
+        counter--;
+
+        if (counter >= 0) {
+            id = document.getElementById('count');
+            id.innerHTML = counter;
         }
-    });
+        else {
+            gameOver();
+        }
+    }, 1000);
 }
-// Welcome area link //
-let welcomeSection = document.getElementById('welcome-section');
 
-// Instructions link //
-let howTo = document.getElementById("how-to-area");
-    let HowToBtn = document.getElementById('how-to-btn');
-    HowToBtn.addEventListener('click', function() {
-        howTo.classList.remove('hide');
-        welcomeSection.classList.add('hide');
-    });
-
-// Play game link //
-let quizArea = document.getElementById('quiz-area');
-    let startBtn = document.getElementById('start-btn');
-    startBtn.addEventListener('click', function() { 
-        quizArea.classList.remove('hide');
-        welcomeSection.classList.add('hide');
-    }); 
-
-// Quiz timer - courtesy of stackoverflow.com and then modified to suit how i wanted it to react with my quiz // 
-var counter = 15;             
-var questionsCount = 0;       
-
-//Questions array
-var questions = [
-    "Question 1", "Question 2", "Question 3"
-];
-
-questionDivId = document.getElementById('question');
-
-setInterval(function () {
-    counter--;
-
-    if (counter >= 0) {
-        id = document.getElementById('count');
-        id.innerHTML = counter;
-    }
-    if (counter === 0) {
-        id.innerHTML = 'Times Up!';
-        counter = 15;
-        questionsCount++;
-    }
-
-    //To check if all questions are completed or not
-    if (questionsCount === questions.length) {
-        questionDivId.innerHTML = "Congratulations! You beat the Endless Quiz!";
-        id.innerHTML = "";
-    } else {
-        questionDivId.innerHTML = questions[questionsCount];
-    }
-}, 1000);
-
-function goToNextQuestion() {
-    questionsCount++;
-    counter = 15;
+function startQuiz() {
+    const question = getQuestion();
+    displayQuiz();
+    displayQuestion(question);
+    startTimer();
 }
+
+
+document.getElementById('start-btn').addEventListener('click', startQuiz);
+
+
+
+// const deselectAnswers = () => {
+//     answerElements.forEach((answer) => (answer.checked = false));
+// };
+
+// // Quiz to react to user clicks for +1 score/game over upon incorrect //
+// const loadQuiz = () => {
+//     deselectAnswers();
+//     const currentQuizData = quizData[currentQuiz];
+//     displayQuestion()
+//     // questionElement.innerText = currentQuizData.question;
+//     // answerButtonA.innerText = currentQuizData.a;
+//     // answerButtonB.innerText = currentQuizData.b;
+//     // answerButtonC.innerText = currentQuizData.c;
+//     // answerButtonD.innerText = currentQuizData.d;
+//     startTimer();
+// };
+
+// loadQuiz();
+
+// const answerButtonList = document.getElementsByClassName('answer');
+// for (var i = 0; i < answerButtonList.length; i++) {
+//     answerButtonList[i].addEventListener("click", (event) => {
+//         const answer = event.target.id;
+//         if (answer) {
+//             if (answer === quizData[currentQuiz].correct) {
+//                 score++;
+
+//                 currentQuiz++;
+//                 if (currentQuiz < quizData.length) {
+//                     loadQuiz();
+//                 }
+//                 else {
+//                     quiz.innerHTML = `
+//                     <h2>You answered ${score} questions correctly</h2>
+//                     <button onclick="history.go(0)">Play Again</button>
+//                 `;
+//                 }
+//             }
+//             else {
+//                 quiz.innerHTML = `
+//                     <h2>You answered ${score} questions correctly</h2>
+//                     <button onclick="history.go(0)">Play Again</button>
+//                 `;
+//             }
+//         }
+//     });
+// }
+// // Welcome area link //
+// let welcomeSection = document.getElementById('welcome-section');
+
+// // Instructions link //
+// let howTo = document.getElementById("how-to-area");
+//     let HowToBtn = document.getElementById('how-to-btn');
+//     HowToBtn.addEventListener('click', function() {
+//         howTo.classList.remove('hide');
+//         welcomeSection.classList.add('hide');
+//     });
+
+// // Play game link //
+// let quizArea = document.getElementById('quiz-area');
+//     let startBtn = document.getElementById('start-btn');
+//     startBtn.addEventListener('click', function() { 
+//         quizArea.classList.remove('hide');
+//         welcomeSection.classList.add('hide');
+//     }); 
+
+// // Quiz timer - courtesy of stackoverflow.com and then modified to suit how i wanted it to react with my quiz // 
+// var counter = 15;             
+// var questionsCount = 0;       
+
+// //Questions array
+// var questions = [
+//     "Question 1", "Question 2", "Question 3"
+// ];
+
+// questionDivId = document.getElementById('question');
+
+
+// function startTimer(){
+//     timer =  setInterval(function () {
+//         counter--;
+
+//         if (counter >= 0) {
+//             id = document.getElementById('count');
+//             id.innerHTML = counter;
+//         }
+//         if (counter === 0) {
+//             id.innerHTML = 'Times Up!';
+//             counter = 15;
+//             questionsCount++;
+//         }
+
+//         //To check if all questions are completed or not
+//         if (questionsCount === questions.length) {
+//             questionDivId.innerHTML = "Congratulations! You beat the Endless Quiz!";
+//             id.innerHTML = "";
+//         } else {
+//             questionDivId.innerHTML = questions[questionsCount];
+//         }
+//     }, 1000);
+// }
+
+// function goToNextQuestion() {
+//     questionsCount++;
+//     counter = 15;
+// }
