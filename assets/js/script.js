@@ -26,7 +26,7 @@ const quizData = [
     },
 ];
 // Progress questions from typed to API with random question bank //
-const quiz = document.getElementById("quiz");
+const quiz = document.getElementById("quiz-area");
 const answerElements = document.querySelectorAll(".answer");
 const questionElement = document.getElementById("question");
 const answerButtonA = document.getElementById("a");
@@ -101,7 +101,7 @@ let quizArea = document.getElementById('quiz-area');
         welcomeSection.classList.add('hide');
     }); 
 
-// Quiz timer // 
+// Quiz timer - courtesy of stackoverflow.com and then modified to suit how i wanted it to react with my quiz // 
 var counter = 15;             
 var questionsCount = 0;       
 
