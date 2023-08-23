@@ -44,6 +44,7 @@ let counter = 15;
 // Simplifying code in easier to read segments from code listed below //
 function displayQuiz() {
     document.getElementById('quiz-area').classList.remove('hide');
+    welcomeSection.classList.add('hide');
 }
 
 
@@ -66,8 +67,8 @@ function displayQuestion(questionData) {
 
 
 
-
-
+// Welcome section //
+let welcomeSection = document.getElementById('welcome-section');
 // How to section //
 let howTo = document.getElementById("how-to-area");
      let HowToBtn = document.getElementById('how-to-btn');
