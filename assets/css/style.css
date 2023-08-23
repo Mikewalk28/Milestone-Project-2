@@ -55,7 +55,16 @@ body {
 #how-to-area {
     background-color: white;
     text-align: center;
-    
-
 }
 
+.message-modal
+{
+    position: absolute;
+    margin-top: 100px;
+    color: black;
+    background: rgba(255,255,255,0.75);
+    width: 40%;
+    text-align: center;
+    height: 150px;
+    z-index: 100000;
+}
