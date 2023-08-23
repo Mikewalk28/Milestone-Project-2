@@ -62,10 +62,27 @@ function displayQuestion(questionData) {
     answerButtonD.innerText = questionData.d;
 }
 
+// Answer section to respond to clicks //
+
+
+
+
+
+// How to section //
+let howTo = document.getElementById("how-to-area");
+     let HowToBtn = document.getElementById('how-to-btn');
+     HowToBtn.addEventListener('click', function() {
+         howTo.classList.remove('hide');
+         welcomeSection.classList.add('hide');
+     });
+
+
 function gameOver() {
     alert('Time is Up');
     clearInterval(timer);
 }
+
+// Quiz timer to reset every question //
 
 function startTimer() {
     timer = setInterval(function () {
@@ -81,6 +98,7 @@ function startTimer() {
     }, 1000);
 }
 
+// Start of quiz //
 function startQuiz() {
     const question = getQuestion();
     displayQuiz();
