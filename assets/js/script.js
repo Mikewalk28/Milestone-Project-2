@@ -41,7 +41,7 @@ let score = 0;
 let timer = null;
 let counter = 15;
 
-
+// Simplifying code in easier to read segments from code listed below //
 function displayQuiz() {
     document.getElementById('quiz-area').classList.remove('hide');
 }
