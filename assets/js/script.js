@@ -65,11 +65,33 @@ function displayQuestion(questionData) {
 
 // Answer section to respond to clicks //
 
+function checkAnswer(event){
+    clearInterval(timer);
+    const answer = event.target.id;
+    const currentQuestion = questionList[currentQuestionIndex];
+    console.info(JSON.stringify(currentQuestion));
+    console.info(answer)
+    if (answer === currentQuestion.correct) {
+        score = score + 1;
+        showNextQuestion();
+    }
+    else{
+        gameOver('Wrong answer, game over');
+    }
+}
 
+
+document.getElementById('start-btn').addEventListener('click', startQuiz);
+
+const answerButtonList = document.getElementsByClassName('answer');
+for (var i = 0; i < answerButtonList.length; i++) {
+    answerButtonList[i].addEventListener("click", checkAnswer);
 
 // Welcome section //
+
 let welcomeSection = document.getElementById('welcome-section');
 // How to section //
+
 let howTo = document.getElementById("how-to-area");
      let HowToBtn = document.getElementById('how-to-btn');
      HowToBtn.addEventListener('click', function() {
@@ -112,109 +134,3 @@ document.getElementById('start-btn').addEventListener('click', startQuiz);
 
 
 
-// const deselectAnswers = () => {
-//     answerElements.forEach((answer) => (answer.checked = false));
-// };
-
-// // Quiz to react to user clicks for +1 score/game over upon incorrect //
-// const loadQuiz = () => {
-//     deselectAnswers();
-//     const currentQuizData = quizData[currentQuiz];
-//     displayQuestion()
-//     // questionElement.innerText = currentQuizData.question;
-//     // answerButtonA.innerText = currentQuizData.a;
-//     // answerButtonB.innerText = currentQuizData.b;
-//     // answerButtonC.innerText = currentQuizData.c;
-//     // answerButtonD.innerText = currentQuizData.d;
-//     startTimer();
-// };
-
-// loadQuiz();
-
-// const answerButtonList = document.getElementsByClassName('answer');
-// for (var i = 0; i < answerButtonList.length; i++) {
-//     answerButtonList[i].addEventListener("click", (event) => {
-//         const answer = event.target.id;
-//         if (answer) {
-//             if (answer === quizData[currentQuiz].correct) {
-//                 score++;
-
-//                 currentQuiz++;
-//                 if (currentQuiz < quizData.length) {
-//                     loadQuiz();
-//                 }
-//                 else {
-//                     quiz.innerHTML = `
-//                     <h2>You answered ${score} questions correctly</h2>
-//                     <button onclick="history.go(0)">Play Again</button>
-//                 `;
-//                 }
-//             }
-//             else {
-//                 quiz.innerHTML = `
-//                     <h2>You answered ${score} questions correctly</h2>
-//                     <button onclick="history.go(0)">Play Again</button>
-//                 `;
-//             }
-//         }
-//     });
-// }
-// // Welcome area link //
-// let welcomeSection = document.getElementById('welcome-section');
-
-// // Instructions link //
-// let howTo = document.getElementById("how-to-area");
-//     let HowToBtn = document.getElementById('how-to-btn');
-//     HowToBtn.addEventListener('click', function() {
-//         howTo.classList.remove('hide');
-//         welcomeSection.classList.add('hide');
-//     });
-
-// // Play game link //
-// let quizArea = document.getElementById('quiz-area');
-//     let startBtn = document.getElementById('start-btn');
-//     startBtn.addEventListener('click', function() { 
-//         quizArea.classList.remove('hide');
-//         welcomeSection.classList.add('hide');
-//     }); 
-
-// // Quiz timer - courtesy of stackoverflow.com and then modified to suit how i wanted it to react with my quiz // 
-// var counter = 15;             
-// var questionsCount = 0;       
-
-// //Questions array
-// var questions = [
-//     "Question 1", "Question 2", "Question 3"
-// ];
-
-// questionDivId = document.getElementById('question');
-
-
-// function startTimer(){
-//     timer =  setInterval(function () {
-//         counter--;
-
-//         if (counter >= 0) {
-//             id = document.getElementById('count');
-//             id.innerHTML = counter;
-//         }
-//         if (counter === 0) {
-//             id.innerHTML = 'Times Up!';
-//             counter = 15;
-//             questionsCount++;
-//         }
-
-//         //To check if all questions are completed or not
-//         if (questionsCount === questions.length) {
-//             questionDivId.innerHTML = "Congratulations! You beat the Endless Quiz!";
-//             id.innerHTML = "";
-//         } else {
-//             questionDivId.innerHTML = questions[questionsCount];
-//         }
-//     }, 1000);
-// }
-
-// function goToNextQuestion() {
-//     questionsCount++;
-//     counter = 15;
-// }
