@@ -41,7 +41,19 @@ let score = 0;
 let timer = null;
 let counter = 15;
 
-// Simplifying code in easier to read segments from code listed below //
+// Start of quiz //
+
+function startQuiz() {
+    const question = getQuestion();
+    displayQuiz();
+    displayQuestion(question);
+    startTimer();
+}
+
+document.getElementById('start-btn').addEventListener('click', startQuiz);
+
+// Show Quiz //
+
 function displayQuiz() {
     document.getElementById('quiz-area').classList.remove('hide');
     welcomeSection.classList.add('hide');
@@ -50,7 +62,6 @@ function displayQuiz() {
 
 function getQuestion() {
     const currentQuestion = questionList[currentQuestionIndex];
-    currentQuestionIndex = currentQuestionIndex + 1;
     return currentQuestion;
 }
 
@@ -76,20 +87,42 @@ function checkAnswer(event){
         showNextQuestion();
     }
     else{
-        gameOver('Wrong answer, game over');
+        gameOver('Wrong answer, game over.');
     }
 }
 
-
-document.getElementById('start-btn').addEventListener('click', startQuiz);
-
+function showNextQuestion(){
+    if (currentQuestionIndex < questionList.length - 1){
+        currentQuestionIndex = currentQuestionIndex + 1;
+        const question = getQuestion();
+        displayQuestion(question);
+        startTimer();
+    }
+    else{
+        winGame();
+    }
+}
 const answerButtonList = document.getElementsByClassName('answer');
 for (var i = 0; i < answerButtonList.length; i++) {
     answerButtonList[i].addEventListener("click", checkAnswer);
 
+// Win game and Game over functions //
+
+function gameOver(message) {
+    document.getElementById('lose-message').innerText = message;
+    document.getElementById('lose').classList.remove('hide');
+    clearInterval(timer);
+}
+
+function winGame() {
+    document.getElementById('win').classList.remove('hide');
+    clearInterval(timer);
+}
+
 // Welcome section //
 
 let welcomeSection = document.getElementById('welcome-section');
+
 // How to section //
 
 let howTo = document.getElementById("how-to-area");
@@ -100,7 +133,7 @@ let howTo = document.getElementById("how-to-area");
      });
 
 
-function gameOver() {
+     function gameOver() {
     alert('Time is Up');
     clearInterval(timer);
 }
@@ -108,6 +141,8 @@ function gameOver() {
 // Quiz timer to reset every question //
 
 function startTimer() {
+    counter = 15;
+    document.getElementById('count').innerHTML = counter;
     timer = setInterval(function () {
         counter--;
 
@@ -116,21 +151,7 @@ function startTimer() {
             id.innerHTML = counter;
         }
         else {
-            gameOver();
+            gameOver('Time is Up');
         }
     }, 1000);
 }
-
-// Start of quiz //
-function startQuiz() {
-    const question = getQuestion();
-    displayQuiz();
-    displayQuestion(question);
-    startTimer();
-}
-
-
-document.getElementById('start-btn').addEventListener('click', startQuiz);
-
-
-
