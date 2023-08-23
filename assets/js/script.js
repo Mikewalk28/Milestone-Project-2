@@ -76,36 +76,6 @@ function displayQuestion(questionData) {
 
 // Answer section to respond to clicks //
 
-function checkAnswer(event){
-    clearInterval(timer);
-    const answer = event.target.id;
-    const currentQuestion = questionList[currentQuestionIndex];
-    console.info(JSON.stringify(currentQuestion));
-    console.info(answer)
-    if (answer === currentQuestion.correct) {
-        score = score + 1;
-        showNextQuestion();
-    }
-    else{
-        gameOver('Wrong answer, game over.');
-    }
-}
-
-function showNextQuestion(){
-    if (currentQuestionIndex < questionList.length - 1){
-        currentQuestionIndex = currentQuestionIndex + 1;
-        const question = getQuestion();
-        displayQuestion(question);
-        startTimer();
-    }
-    else{
-        winGame();
-    }
-}
-const answerButtonList = document.getElementsByClassName('answer');
-for (var i = 0; i < answerButtonList.length; i++) {
-    answerButtonList[i].addEventListener("click", checkAnswer);
-
 // Win game and Game over functions //
 
 function gameOver(message) {
@@ -126,18 +96,48 @@ let welcomeSection = document.getElementById('welcome-section');
 // How to section //
 
 let howTo = document.getElementById("how-to-area");
-     let HowToBtn = document.getElementById('how-to-btn');
-     HowToBtn.addEventListener('click', function() {
-         howTo.classList.remove('hide');
-         welcomeSection.classList.add('hide');
-     });
+let HowToBtn = document.getElementById('how-to-btn');
+HowToBtn.addEventListener('click', function () {
+    howTo.classList.remove('hide');
+    welcomeSection.classList.add('hide');
+});
 
 
-     function gameOver() {
+function gameOver() {
     alert('Time is Up');
     clearInterval(timer);
 }
 
+function checkAnswer(event) {
+    clearInterval(timer);
+    const answer = event.target.id;
+    const currentQuestion = questionList[currentQuestionIndex];
+    console.info(JSON.stringify(currentQuestion));
+    console.info(answer);
+    if (answer === currentQuestion.correct) {
+        score = score + 1;
+        showNextQuestion();
+    }
+    else {
+        gameOver('Wrong answer, game over.');
+    }
+}
+
+function showNextQuestion() {
+    if (currentQuestionIndex < questionList.length - 1) {
+        currentQuestionIndex = currentQuestionIndex + 1;
+        const question = getQuestion();
+        displayQuestion(question);
+        startTimer();
+    }
+    else {
+        winGame();
+    }
+}
+const answerButtonList = document.getElementsByClassName('answer');
+for (var i = 0; i < answerButtonList.length; i++) {
+    answerButtonList[i].addEventListener("click", checkAnswer);
+}
 // Quiz timer to reset every question //
 
 function startTimer() {
