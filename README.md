@@ -32,22 +32,26 @@
 
 # Design
 
-## Imagery
+## Imagery and colour scheme
 
 * The colour scheme of the site was given careful consideration. The colours used in the quiz is important to the overall experience of the user.
+* The background of the site was chosen from a selection of images that relayed with how I wanted the quiz to look. Both images sourced from:
+* https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373356.htm#query=question%20mark%20background&position=11&from_view=keyword&track=ais
+* https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373361.htm#query=question%20mark%20background&position=15&from_view=keyword&track=ais
+* Once the background image was chosen, it was important to make sure the quiz followed suit and so Blue and White became the two dominant colours.
+* Making sure the image and the question and answers contrasted was important to make sure the accessibility for the user was always paramount, that is why there is large white backgrounds to take the focus off the background image.
+  
+## Layout
 
+The quiz site is a single page with 3 sections:
 
+* Welcome Area
+* Play game
+* How to play
 
+## Initial Wireframes
 
-
-
-
-
-
-
-
-Image by <a href="https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373356.htm#query=question%20mark%20background&position=11&from_view=keyword&track=ais">Freepik</a>
-Image by <a href="https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373361.htm#query=question%20mark%20background&position=15&from_view=keyword&track=ais">Freepik</a>
+Wireframes were desinged on https://wireframe.cc 
 
 https://stackoverflow.com/questions/61807525/how-to-create-a-quiz-countdown-timer-for-each-question
 
