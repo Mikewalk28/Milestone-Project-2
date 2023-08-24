@@ -37,11 +37,9 @@ body {
 
 /* Question styling */
 
-#question {
-    color: #005;
-    background-color: #FFFFFF;
-    width: 100%;
-    height: 200px;
+#question,
+#count {
+    color: white;
 }
 
 /* Hidden frames */
@@ -57,14 +55,34 @@ body {
     text-align: center;
 }
 
-.message-modal
-{
+.message-modal {
     position: absolute;
     margin-top: 100px;
     color: black;
-    background: rgba(255,255,255,0.75);
+    background: rgba(255, 255, 255, 0.75);
     width: 40%;
     text-align: center;
     height: 150px;
     z-index: 100000;
+}
+
+#quiz-area {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.quiz-header {
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    width: 100%;
+}
+
+.message-modal a {
+    color: white;
+    text-decoration: none;
+    background-color: #007bff;
+    width: 120px;
+    margin-left: 33%;
+    display: block;
+    padding: 5px;
 }
