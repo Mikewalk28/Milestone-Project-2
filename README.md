@@ -31,6 +31,10 @@
 * https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373361.htm#query=question%20mark%20background&position=15&from_view=keyword&track=ais
 * Once the background image was chosen, it was important to make sure the quiz followed suit and so Blue and White became the two dominant colours.
 * Making sure the image and the question and answers contrasted was important to make sure the accessibility for the user was always paramount, that is why there is large back backgrounds to take the focus off the background image.
+
+## Fonts
+
+Sans Serif is the default fant used for this quiz. There wasn't much reason for changing the font as the question aim was to be readable in a quick manner. Google fonts were imported to explore but ultimately settled on the default font.
   
 ## Layout
 
@@ -43,19 +47,36 @@ The quiz site is a single page with 3 sections:
 ## Initial Wireframes
 
 Wireframes were designed on https://wireframe.cc
-Markup : <details>
-           <summary>Computer Wireframe</summary>
-           ![Desktop Wireframe](assets/images/readme-images/computer-wireframe.png)
-         </details>
+<details>
+    <summary>Computer Wireframe</summary>
+    ![Desktop Wireframe](assets/images/readme-images/computer-wireframe.png)
+</details>
 
-Markup : <details>
-            <summary>iPad Wireframe</summary>
-            ![iPad Wireframe](assets/images/readme-images/ipad-wireframe.png)
-        </details>
+<details>
+    <summary>iPad Wireframe</summary>
+    ![iPad Wireframe](assets/images/readme-images/ipad-wireframe.png)
+</details>
         
-Markup : <details>
-            <summary>iPhone Wireframe</summary>
-            ![iPhone Wireframe](assets/images/readme-images/iphone-wireframe.png</details>
+<details>
+    <summary>iPhone Wireframe</summary>
+    ![iPhone Wireframe](assets/images/readme-images/iphone-wireframe.png)
+</details>
+
+## Features
+
+### Home page
+
+The home page of this website is very simple, it has a H1 heading stating the name of the game and two simplistic buttons to choose from:
+- Play
+- How to Play
+  
+![Home page](assets/images/readme-images/home-page.png)
+
+### How to play page
+
+When the user clicks "How the Endless Quiz works", it tkaes them to a little intro secction that explains the main aim of the game, with a back button to return to the main page.
+
+![How To page](assets/images/readme-images/how-to.png)
 
 https://stackoverflow.com/questions/61807525/how-to-create-a-quiz-countdown-timer-for-each-question
 
