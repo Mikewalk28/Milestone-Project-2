@@ -21,15 +21,6 @@
 * As a returning user I want to be able to play the same quiz and still enjoy it as much as the first time.
 * As a returning user I want to be able to get further than the first time I attempted the quiz.
 
-### Other considerable goals (not in the working example but ideas of how to expand/make the quiz better)
-
-* Allow first time users to select a subsection of the quiz for something they enjoy more than a general quiz.
-* Allow first time users to choose a mode of difficulty for the question bank.
-* Allow the ability for first time/returning users to choose how long they want on the timer.
-* Starting the quiz from a completely random point, and subsequent questions will be random, so the user won't do the quiz in the same order.
-* Tracking the time it takes people to do the quiz. (Completions only)
-* Having a local/non-local leaderboard to compare scores and see who did the quiz in the fastest time.
-
 # Design
 
 ## Imagery and colour scheme
@@ -39,7 +30,7 @@
 * https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373356.htm#query=question%20mark%20background&position=11&from_view=keyword&track=ais
 * https://www.freepik.com/free-vector/hand-drawn-question-mark-pattern_26373361.htm#query=question%20mark%20background&position=15&from_view=keyword&track=ais
 * Once the background image was chosen, it was important to make sure the quiz followed suit and so Blue and White became the two dominant colours.
-* Making sure the image and the question and answers contrasted was important to make sure the accessibility for the user was always paramount, that is why there is large white backgrounds to take the focus off the background image.
+* Making sure the image and the question and answers contrasted was important to make sure the accessibility for the user was always paramount, that is why there is large back backgrounds to take the focus off the background image.
   
 ## Layout
 
@@ -51,8 +42,19 @@ The quiz site is a single page with 3 sections:
 
 ## Initial Wireframes
 
-Wireframes were desinged on https://wireframe.cc 
+Wireframes were designed on https://wireframe.cc
+Markup : <details>
+           <summary>assets/images/README images/Computer wireframe.png</summary>
+         </details>
 
 https://stackoverflow.com/questions/61807525/how-to-create-a-quiz-countdown-timer-for-each-question
 
 
+### Other considerable goals (not in the working example but ideas of how to expand/make the quiz better)
+
+* Allow first time users to select a subsection of the quiz for something they enjoy more than a general quiz.
+* Allow first time users to choose a mode of difficulty for the question bank.
+* Allow the ability for first time/returning users to choose how long they want on the timer.
+* Starting the quiz from a completely random point, and subsequent questions will be random, so the user won't do the quiz in the same order.
+* Tracking the time it takes people to do the quiz. (Completions only)
+* Having a local/non-local leaderboard to compare scores and see who did the quiz in the fastest time.
