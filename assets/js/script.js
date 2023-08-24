@@ -109,14 +109,21 @@ for (var i = 0; i < answerButtonList.length; i++) {
 
 // Win game and Game over functions //
 
+
 function gameOver(message) {
     document.getElementById('lose-message').innerText = message;
     document.getElementById('lose').classList.remove('hide');
+    document.getElementsByClassName('answer').classList.addEventListener('click', function(){
+        isDisabled = !isDisabled;
+    });
     clearInterval(timer);
 }
 
 function winGame() {
     document.getElementById('win').classList.remove('hide');
+    document.getElementsByClassName('answer').classList.addEventListener('click', function () {
+        isDisabled = !isDisabled;
+    });
     clearInterval(timer);
 }
 
@@ -156,3 +163,4 @@ function startTimer() {
         }
     }, 1000);
 }
+
