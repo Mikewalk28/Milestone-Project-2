@@ -1,4 +1,7 @@
 // Sample question //
+// https://www.cosmopolitan.com/uk/worklife/a32433256/best-hard-general-knowledge-quiz-questions/ for some of the questions //
+// https://www.welovequizzes.com/multiple-choice-quiz-questions-and-answers/#google_vignette question bank //
+// https://www.readersdigest.ca/culture/trivia-questions/ question bank //
 const questionList = [
     {
         question: "Who won the 2023 Challenge Cup Final?",
@@ -24,6 +27,144 @@ const questionList = [
         d: "Mars",
         correct: "a",
     },
+    {
+        question: "Which Disney Princess has the least amount of screen time?",
+        a: "Aurora",
+        b: "Snow White",
+        c: "Merida",
+        d: "Jasmine",
+        correct: "a",
+    },
+    {
+        question: "What year did Vincent Van Gogh die?",
+        a: "1899",
+        b: "1910",
+        c: "1890",
+        d: "1887",
+        correct: "c",
+    },
+    {
+        question: "How many digits are in Pi?",
+        a: "62.8 trillion decimals",
+        b: "415 trillion decimals",
+        c: "58.4 billion decimals",
+        d: "198 billion decimals",
+        correct: "a",
+    },
+    {
+        question: "Which English city was once known as Duroliponte?",
+        a: "Carlisle",
+        b: "Cambridge",
+        c: "Newcastle",
+        d: "Cardiff",
+        correct: "b",
+    },
+    {
+        question: "If you have cryophobia, what are you afraid of?",
+        a: "Crying",
+        b: "Ice/The Cold",
+        c: "Tombs",
+        d: "Being buried alive",
+        correct: "b",
+    },
+    {
+        question: "In 1768, Captain James Cook set out to explore which ocean?",
+        a: "Pacific Ocean",
+        b: "Atlantic Ocean",
+        c: "Indian Ocean",
+        d: "Arctic Ocean",
+        correct: "a",
+    },
+    {
+        question: "What is the speed of sound?",
+        a: "120 Km/h",
+        b: "1,200 Km/h",
+        c: "400 Km/h",
+        d: "700 Km/h",
+        correct: "b",
+    },
+    {
+        question: "In total, how many novels were written by the Bronte Sisters?",
+        a: "4",
+        b: "5",
+        c: "6",
+        d: "7",
+        correct: "d",
+    },
+    {
+        question: "What was the first country to use tanks in combat during World War I?",
+        a: "France",
+        b: "Germany",
+        c: "Britain",
+        d: "Russia",
+        correct: "c",
+    },
+    {
+        question: "Which two months are named after Emperors of the Roman Empire?",
+        a: "January and February",
+        b: "March and April",
+        c: "May and June",
+        d: "July and August",
+        correct: "d",
+    },
+    {
+        question: "Which of the following songs was the top-selling hit in 2019?",
+        a: "Someone You Loved",
+        b: "Old Town Road",
+        c: "I Don't Care",
+        d: "Bad Guy",
+        correct: "a",
+    },
+    {
+        question: "The phrase: 'I think, therefore i am' was coined by which philosopher?",
+        a: "Socrates",
+        b: "Plato",
+        c: "Aristotle",
+        d: "Descartes",
+        correct: "d",
+    },
+    {
+        question: "Who is known as the Patron Saint of Spain?",
+        a: "St Patrick",
+        b: "St Benedict",
+        c: "St James",
+        d: "St John",
+        correct: "c",
+    },
+    {
+        question: "What is the name of the first book of the Old Testament in the Bible?",
+        a: "Exodus",
+        b: "Genesis",
+        c: "Proverbs",
+        d: "Matthew",
+        correct: "b",
+    },
+    {
+        question: "How many time zones are there in total in the world?",
+        a: "8",
+        b: "16",
+        c: "24",
+        d: "32",
+        correct: "c",
+    },
+    {
+        question: "What geothermal Icelandic site has the same name as a 1980 movie?",
+        a: "Xanadu",
+        b: "The Shining",
+        c: "Heaven's Gate",
+        d: "The Blue Lagoon",
+        correct: "d",
+    },
+    {
+        question: "What actor said, “If you had been a public figure since the time you were a toddler… maybe you too would value privacy above all else”?",
+        a: "Leonardo DiCaprio",
+        b: "Jodie Foster",
+        c: "Shirley Temple",
+        d: "Daniel Radcliffe",
+        correct: "b",
+    },
+
+
 ];
 // Progress questions from typed to API with random question bank //
 const quiz = document.getElementById("quiz-area");
