@@ -192,6 +192,16 @@ The game can end in one of two ways:
 
 - Both images courtesy of https://www.freepik.com/home
 
+# Deployment
+
+The site was deployed using GitHub pages. The steps to deploy using GitHub pages are:
+
+1. Go to the repository on GitHub.com
+2. Select 'Settings' near the top of the page.
+3. Select 'Pages' from the menu bar on the left of the page.
+4. Under 'Source' select the 'Branch' dropdown menu and select the main branch.
+5. Once selected, click the 'Save'.
+6. Deployment should be confirmed by a message on a green background saying "Your site is published at" followed by the web address.
 
 # Ideas for Improvement
 
