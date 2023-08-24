@@ -49,17 +49,20 @@ The quiz site is a single page with 3 sections:
 Wireframes were designed on https://wireframe.cc
 <details>
     <summary>Computer Wireframe</summary>
-    ![Desktop Wireframe](assets/images/readme-images/computer-wireframe.png)
+
+![Desktop Wireframe](assets/images/readme-images/computer-wireframe.png)
 </details>
 
 <details>
     <summary>iPad Wireframe</summary>
-    ![iPad Wireframe](assets/images/readme-images/ipad-wireframe.png)
+    
+![iPad Wireframe](assets/images/readme-images/ipad-wireframe.png)
 </details>
         
 <details>
-    <summary>iPhone Wireframe</summary>
-    ![iPhone Wireframe](assets/images/readme-images/iphone-wireframe.png)
+    <summary>Mobile Wireframe</summary>
+    
+![iPhone Wireframe](assets/images/readme-images/iphone-wireframe.png)
 </details>
 
 ## Features
@@ -77,6 +80,21 @@ The home page of this website is very simple, it has a H1 heading stating the na
 When the user clicks "How the Endless Quiz works", it tkaes them to a little intro secction that explains the main aim of the game, with a back button to return to the main page.
 
 ![How To page](assets/images/readme-images/how-to.png)
+
+### Game area
+
+Once the user clicks play the game will start and they will be presented with a question, in which they have 15 seconds to choose one of the 4 options presented to them.
+
+![Game area](assets/images/readme-images/game-area.png)
+
+### Game over
+
+The game can end in one of two ways:
+- When time expires, which brings a message saying "Time's up!, or;
+- When they select a wrong answer in which a message pops up saying "Game over, wrong answer." with the option to play again.
+  
+![Game over](assets/images/readme-images/game-over-time.png)
+![Game over](assets/images/readme-images/game-over-wrong.png)
 
 https://stackoverflow.com/questions/61807525/how-to-create-a-quiz-countdown-timer-for-each-question
 
