@@ -110,10 +110,10 @@ The game can end in one of two ways:
 ### Validator testing
   - ## HTML
     - No errors were returned after passing code through official W3C Markup Validator.
-      - ![HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmikewalk28.github.io%2FMilestone-Project-2%2F)
+      - ![HTML Validator](assets/images/readme-images/html-validator.png)
   - ## CSS
-    - No erros were found whnn passing CSS code through official w£C CSS Validator.
-    - ![CSS Validator](http://jigsaw.w3.org/css-validator/validator$link)
+    - No errors were found when passing CSS code through official W3C CSS Validator.
+    - ![CSS Validator](assets/images/readme-images/css-validator.png)
   - ## JavaScript
     - No errors were returned when passing through the JSHint Validator (https://jshint.com/)
       - ![JS Validator](assets/images/readme-images/js-validator.png)
