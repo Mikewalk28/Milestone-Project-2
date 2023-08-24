@@ -40,6 +40,7 @@ let currentQuiz = 0;
 let score = 0;
 let timer = null;
 let counter = 15;
+let blocked = false;
 
 // Start of quiz //
 
@@ -77,17 +78,21 @@ function displayQuestion(questionData) {
 // Answer section to respond to clicks //
 
 function checkAnswer(event) {
-    clearInterval(timer);
-    const answer = event.target.id;
-    const currentQuestion = questionList[currentQuestionIndex];
-    console.info(JSON.stringify(currentQuestion));
-    console.info(answer);
-    if (answer === currentQuestion.correct) {
-        score = score + 1;
-        showNextQuestion();
-    }
-    else {
-        gameOver('Wrong answer, game over.');
+    if (blocked === false) {
+
+        clearInterval(timer);
+        const answer = event.target.id;
+        const currentQuestion = questionList[currentQuestionIndex];
+        console.info(JSON.stringify(currentQuestion));
+        console.info(answer);
+        if (answer === currentQuestion.correct) {
+            score = score + 1;
+            showNextQuestion();
+        }
+        else {
+            gameOver('Wrong answer, game over.');
+        }
+
     }
 }
 
@@ -113,18 +118,14 @@ for (var i = 0; i < answerButtonList.length; i++) {
 function gameOver(message) {
     document.getElementById('lose-message').innerText = message;
     document.getElementById('lose').classList.remove('hide');
-    document.getElementsByClassName('answer').classList.addEventListener('click', function(){
-        isDisabled = !isDisabled;
-    });
     clearInterval(timer);
+    blocked = true;
 }
 
 function winGame() {
     document.getElementById('win').classList.remove('hide');
-    document.getElementsByClassName('answer').classList.addEventListener('click', function () {
-        isDisabled = !isDisabled;
-    });
     clearInterval(timer);
+    blocked = true;
 }
 
 // Welcome section //
@@ -140,11 +141,6 @@ HowToBtn.addEventListener('click', function () {
     welcomeSection.classList.add('hide');
 });
 
-
-function gameOver() {
-    alert('Time is Up');
-    clearInterval(timer);
-}
 
 // Quiz timer to reset every question //
 
@@ -163,4 +159,3 @@ function startTimer() {
         }
     }, 1000);
 }
-
