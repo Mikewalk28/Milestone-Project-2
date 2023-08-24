@@ -1,4 +1,4 @@
-// Sample question //
+// Sample question https://foolishdeveloper.com/javascript-quiz-app/#:~:text=Create%20an%20HTML%20structure%20for,options%2C%20and%20the%20correct%20answer. for start of quiz layout and code style//
 // https://www.cosmopolitan.com/uk/worklife/a32433256/best-hard-general-knowledge-quiz-questions/ for some of the questions //
 // https://www.welovequizzes.com/multiple-choice-quiz-questions-and-answers/#google_vignette question bank //
 // https://www.readersdigest.ca/culture/trivia-questions/ question bank //
@@ -284,7 +284,7 @@ HowToBtn.addEventListener('click', function () {
 
 
 // Quiz timer to reset every question //
-
+// https://stackoverflow.com/questions/61807525/how-to-create-a-quiz-countdown-timer-for-each-question to help with the timer //
 function startTimer() {
     counter = 15;
     document.getElementById('count').innerHTML = counter;
