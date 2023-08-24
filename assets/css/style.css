@@ -98,7 +98,7 @@ body {
 
 /* Media Queries section */
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 768px) {
 
     .answer {
         background-color: #005;
@@ -136,7 +136,7 @@ body {
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
 
     .answer {
         background-color: #005;
