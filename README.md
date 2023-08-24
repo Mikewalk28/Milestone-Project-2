@@ -44,8 +44,18 @@ The quiz site is a single page with 3 sections:
 
 Wireframes were designed on https://wireframe.cc
 Markup : <details>
-           <summary>assets/images/README images/Computer wireframe.png</summary>
+           <summary>Computer Wireframe</summary>
+           ![Desktop Wireframe](assets/images/readme-images/computer-wireframe.png)
          </details>
+
+Markup : <details>
+            <summary>iPad Wireframe</summary>
+            ![iPad Wireframe](assets/images/readme-images/ipad-wireframe.png)
+        </details>
+        
+Markup : <details>
+            <summary>iPhone Wireframe</summary>
+            ![iPhone Wireframe](assets/images/readme-images/iphone-wireframe.png</details>
 
 https://stackoverflow.com/questions/61807525/how-to-create-a-quiz-countdown-timer-for-each-question
 
